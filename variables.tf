@@ -36,4 +36,3 @@ variable "egress" {
     to_port          = number
   }))
 }
-
