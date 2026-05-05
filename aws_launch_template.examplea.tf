@@ -26,7 +26,6 @@ resource "aws_launch_template" "examplea" {
     }
   }
 }
-
 variable "template" {
   type = object({
     description   = string
@@ -35,7 +34,6 @@ variable "template" {
     name          = string
   })
 }
-
 variable "disk" {
   type = object(
     {

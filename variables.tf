@@ -1,4 +1,3 @@
-
 variable "group" {
   type = object({
     name        = string
@@ -7,8 +6,6 @@ variable "group" {
   })
   description = "(optional) describe your variable"
 }
-
-
 variable "ingress" {
   type = list(object({
     cidr_blocks      = list(string)
@@ -22,7 +19,6 @@ variable "ingress" {
     to_port          = number
   }))
 }
-
 variable "egress" {
   type = list(object({
     cidr_blocks      = list(string)

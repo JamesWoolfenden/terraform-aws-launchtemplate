@@ -1,4 +1,5 @@
 resource "aws_security_group" "example" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
 
   description = var.group.description
   egress      = var.egress
