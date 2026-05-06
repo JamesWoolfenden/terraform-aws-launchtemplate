@@ -1,13 +1,11 @@
-# terraform-aws-launch-template
+# terraform-aws-launchtemplate
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-launch-template/workflows/Verify%20and%20Bump/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-launch-template)
-[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-launch-template.svg)](https://github.com/JamesWoolfenden/terraform-aws-launch-template/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-launch-template.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-launch-template/releases/latest)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-launchtemplate.svg)](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-launchtemplate.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-launch-template/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-launch-template&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-launch-template/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-launch-template&benchmark=INFRASTRUCTURE+SECURITY)
 
 Terraform module -
 
@@ -30,7 +28,7 @@ Include **module.launch-template.tf** this repository as a module in your existi
 
 ```terraform
 module "launch-template" {
-  source        = "JamesWoolfenden/launch-template/aws"
+  source        = "JamesWoolfenden/launchtemplate/aws"
   version       = "0.0.1"
   cluster     = var.cluster
   subnet_list = ["subnet-04338b6369d8288a5"]
@@ -54,7 +52,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
@@ -64,19 +62,19 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_launch_template.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template) | resource |
 | [aws_security_group.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_disk"></a> [disk](#input\_disk) | n/a | <pre>object(<br>    {<br>      device_name = string<br><br>      ebs = object({<br>        delete_on_termination = bool<br>        encrypted             = bool<br>        iops                  = number<br>        snapshot_id           = string<br>        throughput            = number<br>        volume_size           = number<br>        volume_type           = string<br>      })<br>    }<br>  )</pre> | n/a | yes |
-| <a name="input_egress"></a> [egress](#input\_egress) | n/a | <pre>list(object({<br>    cidr_blocks      = list(string)<br>    description      = string<br>    from_port        = number<br>    ipv6_cidr_blocks = list(string)<br>    prefix_list_ids  = list(string)<br>    protocol         = string<br>    security_groups  = list(string)<br>    self             = bool<br>    to_port          = number<br>  }))</pre> | n/a | yes |
-| <a name="input_group"></a> [group](#input\_group) | (optional) describe your variable | <pre>object({<br>    name        = string<br>    description = string<br>    vpc_id      = string<br>  })</pre> | n/a | yes |
-| <a name="input_ingress"></a> [ingress](#input\_ingress) | n/a | <pre>list(object({<br>    cidr_blocks      = list(string)<br>    description      = string<br>    from_port        = number<br>    ipv6_cidr_blocks = list(string)<br>    prefix_list_ids  = list(string)<br>    protocol         = string<br>    security_groups  = list(string)<br>    self             = bool<br>    to_port          = number<br>  }))</pre> | n/a | yes |
-| <a name="input_template"></a> [template](#input\_template) | n/a | <pre>object({<br>    description   = string<br>    image_id      = string<br>    instance_type = string<br>    name          = string<br>  })</pre> | n/a | yes |
+| ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_disk"></a> [disk](#input\_disk) | n/a | <pre>object(<br/>    {<br/>      device_name = string<br/><br/>      ebs = object({<br/>        delete_on_termination = bool<br/>        encrypted             = bool<br/>        iops                  = number<br/>        snapshot_id           = string<br/>        throughput            = number<br/>        volume_size           = number<br/>        volume_type           = string<br/>      })<br/>    }<br/>  )</pre> | n/a | yes |
+| <a name="input_egress"></a> [egress](#input\_egress) | n/a | <pre>list(object({<br/>    cidr_blocks      = list(string)<br/>    description      = string<br/>    from_port        = number<br/>    ipv6_cidr_blocks = list(string)<br/>    prefix_list_ids  = list(string)<br/>    protocol         = string<br/>    security_groups  = list(string)<br/>    self             = bool<br/>    to_port          = number<br/>  }))</pre> | n/a | yes |
+| <a name="input_group"></a> [group](#input\_group) | (optional) describe your variable | <pre>object({<br/>    name        = string<br/>    description = string<br/>    vpc_id      = string<br/>  })</pre> | n/a | yes |
+| <a name="input_ingress"></a> [ingress](#input\_ingress) | n/a | <pre>list(object({<br/>    cidr_blocks      = list(string)<br/>    description      = string<br/>    from_port        = number<br/>    ipv6_cidr_blocks = list(string)<br/>    prefix_list_ids  = list(string)<br/>    protocol         = string<br/>    security_groups  = list(string)<br/>    self             = bool<br/>    to_port          = number<br/>  }))</pre> | n/a | yes |
+| <a name="input_template"></a> [template](#input\_template) | n/a | <pre>object({<br/>    description   = string<br/>    image_id      = string<br/>    instance_type = string<br/>    name          = string<br/>  })</pre> | n/a | yes |
 
 ## Outputs
 
@@ -141,13 +139,13 @@ Check out these related projects.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-launch-template/issues).
+File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate/issues).
 
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-launch-template/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-launchtemplate/issues) to report any bugs or file feature requests.
 
 ## Copyrights
 
